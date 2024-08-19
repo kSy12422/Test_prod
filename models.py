@@ -14,3 +14,9 @@ class Book(Base):
     id = Column(Integer, primary_key=True)
     title = Column(String, nullable=False)
     author = Column(String, nullable=False)
+
+class ApiToken(Base):
+    __tablename__ = 'api_tokens'
+    id = Column(Integer, primary_key=True)
+    token = Column(String, unique=True, nullable=False)
+    user_id = Column(Integer, nullable=False)
